@@ -295,17 +295,128 @@ Reconeción de instancia y revision del archivo cargado
 \end{figure}
 Copiamos nuestro archivo copiado .pem
  \clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/29-cp-pem-file}
+	\caption{Copiamos nuestro archivo .pem}
+	\label{fig:29}	
+\end{figure}
+Abrimos nuestro archivo config
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/30-create-ssh-config}
+	\caption{Abrimos nuestro archivo config}
+	\label{fig:30}	
+\end{figure}
+
+Editamos nuestro archivo
+
+ \clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/31-write-host-hadoop}
+	\caption{Modificamos nuestro archivo config}
+	\label{fig:31}	
+\end{figure}
+
+ Ejecutamos el ssh hadoop
+ \begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/32-ssh-hadoop}
+	\caption{Ejecutamos el ssh hadoop}
+	\label{fig:32}	
+\end{figure}
+
+Generamos una keygen
+ \clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/33-ssh-keygen}
+	\caption{Generar el ssh keygen}
+	\label{fig:33}	
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/33-ssh-keygen}
+	\caption{Generar el ssh keygen}
+	\label{fig:33}	
+\end{figure}
+
+Abrimos nuestro hostname
+\clearpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/34-nano-etc-hostname}
+	\caption{Modificamos nuestro hostName}
+	\label{fig:34}	
+\end{figure}
+Configuramos el core-site-xml
 
 
-\subsection{Configuración de Hadoop}
 
 
--
--
--
+Configuramos el yarn-site-xml
 
-\subsection{Inicio de Cluster de Hadoop}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/36-yarn-site-xml}
+	\caption{Modificamos yarn site xml}
+	\label{fig:36}	
+\end{figure}
 
+Configuramos el hdfs-site-xml
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/37-hdfs-site-xml}
+	\caption{Modificamos hdfs site xml}
+	\label{fig:37}	
+\end{figure}
+\clearpage
+
+Creamos las carpetas namenode y datanode
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/38-make-namenode}
+	\caption{Creación de las carpetas namenode y datanode}
+	\label{fig:38}	
+\end{figure}
+Modificamos hadoop home masters
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/39-nano-hadoop_home-masters}
+	\caption{Modificamos el archivo hadoop home masters}
+	\label{fig:39}	
+\end{figure}
+\clearpage
+Modificamos hadoop home slaves
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/40-nano-hadoop_home-slaves}
+	\caption{Modificamos el archivo hadoop home slaves}
+	\label{fig:40}	
+\end{figure}
+
+Ejecutamos hdfs format
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/41-hdfs-format}
+	\caption{Damos format}
+	\label{fig:41}	
+\end{figure}
+
+\clearpage 
+Iniciamos el start-dfs.sh
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/42-start-dfs-sh}
+	\caption{Ejecutamos el start-dfs-sh}
+	\label{fig:42}	
+\end{figure}
+
+\clearpage
 
 
 \subsection{Iniciar Yarn}
@@ -325,8 +436,6 @@ Para iniciar el history server, ejecutar el siguiente comando.
 	\caption{Listar procesos Java en ejecución}
 	\label{fig:44}	
 \end{figure}
-
-\clearpage
 
 Para ver los procesos java en ejecución, ejecutar el comando $jps$. 
 \begin{figure}[h]
@@ -357,7 +466,6 @@ Recargamos la URL en el navegador publicdns:8088 y veremos la vista de métricas
 	\caption{Vista de métricas de cluster de Hadoop}
 	\label{fig:47}	
 \end{figure}
-
 
 
 
