@@ -16,44 +16,135 @@
 \section{Configuración de una instancia EC2}
 \subsection{Inicio de sesión en AWS}
 
+Se inicia sesión en AWS con la cuenta awsacademy en el siguiente url: \href{https://awsacademy.instructure.com/}{https://awsacademy.instructure.com/}
+
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.3] {img/ejemplo}
-	\caption{Sistema de recomendación por asociación de productos, Fuente: \scite{singh2019analysis}}
-	\label{fig:5}	
+	\includegraphics[scale=.3] {img/01}
+	\caption{Inicio de sesión}
+	\label{fig:0}	
 \end{figure} 
 
-\lipsum[2-4]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3] {img/01}
+	\caption{Creación de instancia ec2}
+	\label{fig:1}	
+\end{figure} 
 
-\subsection{Selección de imagen AMI}
-\lipsum[2-4]
+Amazon EC2 le permite crear máquinas virtuales, o instancias, que se ejecutan en la nube de AWS. Comience rápidamente siguiendo los sencillos pasos que se indican a continuación.
 
-\subsection{Elección del tipo de instancia}
-\lipsum[2-4]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3] {img/02}
+	\caption{Par de claves: myKey.pem}
+	\label{fig:2}	
+\end{figure} 
 
-\subsection{Configuración de IP público}
-\lipsum[2-4]
 
-\subsection{Configuración de espacio de almacenamiento}
-\lipsum[2-4]
+\clearpage
+
+\subsection{Selección de imagen AMI y tipo de instancia}
+
+Amazon Machine Image (AMI) son imágenes que proporciona aws, y se seleccionó: Ubuntu Server 22.04 LTS (HVM).
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.3] {img/03}
+	\caption{Imagen AMI Ubuntu 20.04, tipo: t3.medium}
+	\label{fig:3}	
+\end{figure}
 
 \subsection{Configuración del Grupo de Seguridad}
-\lipsum[2-4]
+Un grupo de seguridad es un conjunto de reglas de firewall  que controlan el trático de la instancia.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/04}
+	\caption{grupo de seguridad: habilitación de conexión ssh}
+	\label{fig:4}	
+\end{figure} 
 
-\subsection{creación de clave privada}
-\lipsum[2-4]
+\clearpage
 
 \subsection{Iniciar instancia}
-\lipsum[2-4]
+En esta sección se presenta el resumen de la instancia ec2 configurada. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/06}
+	\caption{Resumen de instancia}
+	\label{fig:6}	
+\end{figure} 
+
+La siguiente figura muestra la confirmación del lanzamiento de la instancia, indicando que se realizo de forma satisfactoria 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/07}
+	\caption{Instancia ejecutándose de manera satisfactoria}
+	\label{fig:7}	
+\end{figure} 
+
+\clearpage
+
+Consola de aws donde se muestra la lista de instancias creadas y demás metadatos asociados a los mismo. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/08}
+	\caption{Lista de instancias en ejecución}
+	\label{fig:8}	
+\end{figure} 
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/09-asignacionDeIpElastica}
+	\caption{Instancia en ejecución}
+	\label{fig:9}	
+\end{figure} 
+
+La siguiente figura muestra la asignación satisfactoria de un ip elástico asociado a la instancia ec2 que se muestra en la figura anterior.
+
+\subsection{Asignación de IP elástica a la instancia}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/09-asignacionDeIpElastica}
+	\caption{}
+	\label{fig:9}	
+\end{figure} 
+
+\clearpage
+
+\subsection{Asignación de IP elástica a la instancia}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/10-asigacionCorrectaIpElastica}
+	\caption{}
+	\label{fig:10}	
+\end{figure} 
+
+\subsection{Conexión segura por SSH}
+Cambiando permisos de lectura y ejecución al archivo myKey.pem
 
 
-\subsection{Asignación de IP estática a la instancia}
-\lipsum[2-4]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/11-chmod400}
+	\caption{Cambio de permisos}
+	\label{fig:11}	
+\end{figure} 
 
-\subsection{Asociación de IP estática a la instancia}
-\lipsum[2-4]
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/11-chmod400}
+	\caption{Cambio de permisos}
+	\label{fig:11}	
+\end{figure} 
 
-Conexión segura por SSH
+ssh -i mykey.pem ubuntu@44.192.119.93
+ 
+fdsa
+fdsa
+fdas
+
+
 
 
 Actualización de paquetes
@@ -78,7 +169,6 @@ Conexión segura por SSH
  
 
 \subsection{Configuración de Hadoop}
-\lipsum[2-4]
 
 
 -
@@ -86,7 +176,6 @@ Conexión segura por SSH
 -
 
 \subsection{Inicio de Cluster de Hadoop}
-\lipsum[2-4]
 
 -
 -
@@ -97,7 +186,6 @@ Conexión segura por SSH
 
 
 \section{Ejemplo de Aplicación WordCount con Mapreduce}
-\lipsum[2-4]
 
 - Código Fuente
 
@@ -114,7 +202,6 @@ Conexión segura por SSH
 
 
 \section{Conclusiones}
-\lipsum[2-2]
 % ------------------------------------------------------------------------------
 % REFERENCIAS, revisar configuración \stylecitereferences
 % ------------------------------------------------------------------------------
