@@ -11,16 +11,16 @@
 
 \section{Introducción}
 
-\lipsum[2-4]
+El objetivo de esta informe es que presenta una guía para presentar el ejemplo de WordCountcon el objetivo que  permita familiarizar con los conceptos fundamentales del desarrollo de programas en el entorno MapReduce de Java, concretamente, en la implementación de Hadoop. Este informe se basa en el tutorial \scite{tuto_mapreduce} Este informe aplica el modelo  de programación MapReduce, en cuyas ideas se basa la implementación de MapReduce de libre distribución incluida en Hadoop.
 
 \section{Configuración de una instancia EC2}
 \subsection{Inicio de sesión en AWS}
 
-Se inicia sesión en AWS con la cuenta awsacademy en el siguiente url: \href{https://awsacademy.instructure.com/}{https://awsacademy.instructure.com/}
+Se inicia sesión en AWS con la cuenta awsacademy en el siguiente url \scite{awsacademy}
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.3] {img/01}
+	\includegraphics[scale=.3] {img/00-login}
 	\caption{Inicio de sesión}
 	\label{fig:0}	
 \end{figure}
@@ -245,8 +245,19 @@ Copiamos nuestro archivo copiado .pem
 
 
 
+\clearpage
 
 \section{Ejemplo de Aplicación WordCount con Mapreduce}
+\justify
+En esta sección se presenta la aplicación de MapReduce como ejemplo, para tener una idea de como funciona.
+WordCount es una aplicación sencilla que cuenta el número de apariciones de cada palabra en un conjunto de entrada determinado.
+
+Esto funciona con una instalación de Hadoop en una instancia de EC2 de aws, configurado de forma pseudodistribuida (configurado en un solo nodo) \scite{tuto_mapreduce}
+ 
+ 
+ \subsection{Codigo fuente: WordCount}
+ 
+ Para el desarrollo de la aplicación se uso el lenguaje de programación Java, cuyo código se muestra a continuación.
 
 \begin{sourcecode}[]{java}{WordCount en Java.}
 import java.io.IOException;
@@ -313,21 +324,86 @@ public class WordCount {
 \end{sourcecode}
 
 
-- Código Fuente
+\subsection{Creación de un archivo de entrada}
 
-- Crear un archivo de entrada
+Se ha creado un archivo de nombre input, el mismo que contiene los nombres y apellidos de los miembros del equipo, con el fin de que la aplicación pueda contar la cantidad de veces que se repite alguna de ellas, tal como se muestra en la figura siguiente.
 
-
-- Crear un directorio en HDFS y copiar archivos de Local a HDFS
-
-
-- Ejecución de MapReduce
-
-- Salida
-
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/48-input}
+	\caption{archivo input}
+	\label{fig:48}	
+\end{figure} 
 
 
+
+
+\subsection{Crear un directorio en HDFS}
+
+En esta sección se crea un directorio HDFS para luego copiar los archivos el fs local al HDFS
+\begin{sourcecode}[]{bash}{creación de HDFS}
+$ hdfs dfs -mkdir -p WordCount/input
+$ hdfs dfs -put input WordCount/input
+\end{sourcecode}
+
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.28] {img/49-hdfs-dfs-mkdir-p-wordcount-input}
+	\caption{Creación de directorio HDFS}
+	\label{fig:49}	
+\end{figure} 
+
+
+\textbf{Ejecución de Hadoop}
+
+\begin{sourcecode}[]{bash}{Ejecución de .jar}
+hadoop jar wordcount.jar wordcount WordCount/input WordCount/output
+\end{sourcecode}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.28] {img/50-wordcount-jar}
+	\caption{Ejecución del paquete .jar parte 1}
+	\label{fig:50}	
+\end{figure} 
+
+Se visualiza el log de la ejecución de la aplicación empaquetada en .jar
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.28] {img/51-hadoop-jar-wordcloud}
+	\caption{ejecución del paquete .jar parte2}
+	\label{fig:51}	
+\end{figure} 
+
+
+\textbf{Salida}
+
+Ejecutamos el file system de hadoop para que pueda obtener el output almacenado en el archivo part-r-00000. 
+\begin{sourcecode}[]{bash}{Output}
+hdfs dfs -cat WordCount/output/part-r-00000
+\end{sourcecode}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.28] {img/52-output-hdfs-dfs}
+	\caption{Output}
+	\label{fig:52}	
+\end{figure} 
+
+Podemos apreciar que se realiza el conteo de nombres y apellidos que se repiten una determinada cantidad de veces.
+
+Finalmente para terminar la ejecución del servicio de Hadoop, ejecutamos el siguiente comando
+
+
+\begin{sourcecode}[]{bash}{Detener el servicio}
+HADOOP_HOME/sbin/stop-all.sh
+\end{sourcecode}
+
+\clearpage
 \section{Conclusiones}
+
+Hadoop es un framework muy potente y realmente utilizable, sin embargo para un mejor performance, se requiere una mayor cantidad de nodo y datos para que hadoop pueda ser utilizado de manera eficiente. La aplicación WordCount es un sencillo programa que muestra las funciones que ofrece el MapReduce ya que ha demostrado como las aplicaciones pueden acceder a los parámetros de configuración de las implementaciones del Mapper, asimismo se ha demostrado la utilidad para manejar opciones genéricas de línea de comando de Hadoop. La aplicación ha demostrado que se puede usar para contar palabras, y como pueden configurar la información de estado específico de la aplicación que pasa del método map y reduce. 
 % ------------------------------------------------------------------------------
 % REFERENCIAS, revisar configuración \stylecitereferences
 % ------------------------------------------------------------------------------
