@@ -147,27 +147,95 @@ fdsa
 fdsa
 fdas
 
-
-
-
-Actualización de paquetes
-
-
-Cambio de nombre al hostname
-
-Instalación de OpenJDK
-
-
-Descarga e instalación de Hadoop
-
-
-Descompresión e instalación del instalador
-
-cambiando y moviendo el paquete
-
-\subsection{Configuración del environment}
-Abrirmos nuestro entorno
 \clearpage
+
+
+\subsection{Actualización de paquetes}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/13-update}
+	\caption{Actualización de paquetes }
+	\label{fig:13}	
+\end{figure}
+
+\subsection{Cambio del hostname}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/14-hostname}
+	\caption{Actualización del hostname}
+	\label{fig:14}	
+\end{figure}
+
+\clearpage
+
+\subsection{Instalación de Open JDK}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/15-installJdk}
+	\caption{Instalación de OpenJDK}
+	\label{fig:15}	
+\end{figure}
+
+\subsection{Descarga e instalación de Hadoop}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/15-installJdk}
+	\caption{Instalación de OpenJDK}
+	\label{fig:15}	
+\end{figure}
+
+\clearpage
+
+\subsection{Descarga e instalación de Hadoop}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/16-webpageHadoop}
+	\caption{Lista de releases para descarga}
+	\label{fig:16}	
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/17-hadoop-tar-gz}
+	\caption{Página de descarga del instalador seleccionado}
+	\label{fig:17}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/18-wgetHadoop}
+	\caption{Descarga del instalador}
+	\label{fig:18}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/19-tarXVFZ}
+	\caption{Instalación de hadoop}
+	\label{fig:19}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/20-tarXVFZ-2}
+	\caption{Instalación de hadoop (2da parte)}
+	\label{fig:20}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/21-rename}
+	\caption{Renombrado de la ruta de instalación}
+	\label{fig:21}
+\end{figure}
+
+\clearpage
+
+Configuración del environment
 
  \begin{figure}[h]
 	\centering
@@ -210,7 +278,7 @@ Agregamos java-home y hadoop$\_$conf$\_$dir
 	\label{fig:26}	
 \end{figure}
 \subsection{Conexión segura por SSH}
-Abrimos nuestro entorno de comandos y actualizamos 
+Abrimos nuestro entorno de comandos y actualizamos
  \clearpage
 \begin{figure}[h]
 	\centering
@@ -225,25 +293,134 @@ Reconeción de instancia y revision del archivo cargado
 	\caption{Reconectar conexión}
 	\label{fig:28}	
 \end{figure}
-Copiamos nuestro archivo copiado .pem 
- \clearpage 
+Copiamos nuestro archivo copiado .pem
+ \clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/29-cp-pem-file}
+	\caption{Copiamos nuestro archivo .pem}
+	\label{fig:29}	
+\end{figure}
+Abrimos nuestro archivo config
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/30-create-ssh-config}
+	\caption{Abrimos nuestro archivo config}
+	\label{fig:30}	
+\end{figure}
 
+Editamos nuestro archivo
 
-\subsection{Configuración de Hadoop}
+ \clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/31-write-host-hadoop}
+	\caption{Modificamos nuestro archivo config}
+	\label{fig:31}	
+\end{figure}
 
+ Ejecutamos el ssh hadoop
+ \begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/32-ssh-hadoop}
+	\caption{Ejecutamos el ssh hadoop}
+	\label{fig:32}	
+\end{figure}
 
--
--
--
+Generamos una keygen
+ \clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/33-ssh-keygen}
+	\caption{Generar el ssh keygen}
+	\label{fig:33}	
+\end{figure}
 
-\subsection{Inicio de Cluster de Hadoop}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/33-ssh-keygen}
+	\caption{Generar el ssh keygen}
+	\label{fig:33}	
+\end{figure}
 
--
--
--
+Abrimos nuestro hostname
+\clearpage
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/34-nano-etc-hostname}
+	\caption{Modificamos nuestro hostName}
+	\label{fig:34}	
+\end{figure}
+Configuramos el core-site-xml
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/35-core-site-xml}
+	\caption{Modificamos core site xml}
+	\label{fig:35}	
+\end{figure}
 
+\clearpage
+
+Configuramos el yarn-site-xml
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/36-yarn-site-xml}
+	\caption{Modificamos yarn site xml}
+	\label{fig:36}	
+\end{figure}
+
+Configuramos el hdfs-site-xml
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/37-hdfs-site-xml}
+	\caption{Modificamos hdfs site xml}
+	\label{fig:37}	
+\end{figure}
+\clearpage
+
+Creamos las carpetas namenode y datanode
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/38-make-namenode}
+	\caption{Creación de las carpetas namenode y datanode}
+	\label{fig:38}	
+\end{figure}
+Modificamos hadoop home masters
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/39-nano-hadoop_home-masters}
+	\caption{Modificamos el archivo hadoop home masters}
+	\label{fig:39}	
+\end{figure}
+\clearpage
+Modificamos hadoop home slaves
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/40-nano-hadoop_home-slaves}
+	\caption{Modificamos el archivo hadoop home slaves}
+	\label{fig:40}	
+\end{figure}
+
+Ejecutamos hdfs format
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/41-hdfs-format}
+	\caption{Damos format}
+	\label{fig:41}	
+\end{figure}
+
+\clearpage 
+Iniciamos el start-dfs.sh
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/42-start-dfs-sh}
+	\caption{Ejecutamos el start-dfs-sh}
+	\label{fig:42}	
+\end{figure}
 
 \clearpage
 
@@ -253,10 +430,10 @@ En esta sección se presenta la aplicación de MapReduce como ejemplo, para tene
 WordCount es una aplicación sencilla que cuenta el número de apariciones de cada palabra en un conjunto de entrada determinado.
 
 Esto funciona con una instalación de Hadoop en una instancia de EC2 de aws, configurado de forma pseudodistribuida (configurado en un solo nodo) \scite{tuto_mapreduce}
- 
- 
+
+
  \subsection{Codigo fuente: WordCount}
- 
+
  Para el desarrollo de la aplicación se uso el lenguaje de programación Java, cuyo código se muestra a continuación.
 
 \begin{sourcecode}[]{java}{WordCount en Java.}
@@ -333,7 +510,7 @@ Se ha creado un archivo de nombre input, el mismo que contiene los nombres y ape
 	\includegraphics[scale=.35] {img/48-input}
 	\caption{archivo input}
 	\label{fig:48}	
-\end{figure} 
+\end{figure}
 
 
 
@@ -352,7 +529,7 @@ $ hdfs dfs -put input WordCount/input
 	\includegraphics[scale=.28] {img/49-hdfs-dfs-mkdir-p-wordcount-input}
 	\caption{Creación de directorio HDFS}
 	\label{fig:49}	
-\end{figure} 
+\end{figure}
 
 
 \textbf{Ejecución de Hadoop}
@@ -366,7 +543,7 @@ hadoop jar wordcount.jar wordcount WordCount/input WordCount/output
 	\includegraphics[scale=.28] {img/50-wordcount-jar}
 	\caption{Ejecución del paquete .jar parte 1}
 	\label{fig:50}	
-\end{figure} 
+\end{figure}
 
 Se visualiza el log de la ejecución de la aplicación empaquetada en .jar
 \begin{figure}[h]
@@ -374,12 +551,12 @@ Se visualiza el log de la ejecución de la aplicación empaquetada en .jar
 	\includegraphics[scale=.28] {img/51-hadoop-jar-wordcloud}
 	\caption{ejecución del paquete .jar parte2}
 	\label{fig:51}	
-\end{figure} 
+\end{figure}
 
 
 \textbf{Salida}
 
-Ejecutamos el file system de hadoop para que pueda obtener el output almacenado en el archivo part-r-00000. 
+Ejecutamos el file system de hadoop para que pueda obtener el output almacenado en el archivo part-r-00000.
 \begin{sourcecode}[]{bash}{Output}
 hdfs dfs -cat WordCount/output/part-r-00000
 \end{sourcecode}
@@ -389,7 +566,7 @@ hdfs dfs -cat WordCount/output/part-r-00000
 	\includegraphics[scale=.28] {img/52-output-hdfs-dfs}
 	\caption{Output}
 	\label{fig:52}	
-\end{figure} 
+\end{figure}
 
 Podemos apreciar que se realiza el conteo de nombres y apellidos que se repiten una determinada cantidad de veces.
 
@@ -403,7 +580,7 @@ HADOOP_HOME/sbin/stop-all.sh
 \clearpage
 \section{Conclusiones}
 
-Hadoop es un framework muy potente y realmente utilizable, sin embargo para un mejor performance, se requiere una mayor cantidad de nodo y datos para que hadoop pueda ser utilizado de manera eficiente. La aplicación WordCount es un sencillo programa que muestra las funciones que ofrece el MapReduce ya que ha demostrado como las aplicaciones pueden acceder a los parámetros de configuración de las implementaciones del Mapper, asimismo se ha demostrado la utilidad para manejar opciones genéricas de línea de comando de Hadoop. La aplicación ha demostrado que se puede usar para contar palabras, y como pueden configurar la información de estado específico de la aplicación que pasa del método map y reduce. 
+Hadoop es un framework muy potente y realmente utilizable, sin embargo para un mejor performance, se requiere una mayor cantidad de nodo y datos para que hadoop pueda ser utilizado de manera eficiente. La aplicación WordCount es un sencillo programa que muestra las funciones que ofrece el MapReduce ya que ha demostrado como las aplicaciones pueden acceder a los parámetros de configuración de las implementaciones del Mapper, asimismo se ha demostrado la utilidad para manejar opciones genéricas de línea de comando de Hadoop. La aplicación ha demostrado que se puede usar para contar palabras, y como pueden configurar la información de estado específico de la aplicación que pasa del método map y reduce.
 % ------------------------------------------------------------------------------
 % REFERENCIAS, revisar configuración \stylecitereferences
 % ------------------------------------------------------------------------------
