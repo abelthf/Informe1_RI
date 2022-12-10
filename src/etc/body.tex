@@ -23,7 +23,7 @@ Se inicia sesión en AWS con la cuenta awsacademy en el siguiente url: \href{htt
 	\includegraphics[scale=.3] {img/01}
 	\caption{Inicio de sesión}
 	\label{fig:0}	
-\end{figure} 
+\end{figure}
 
 \clearpage
 
@@ -32,7 +32,7 @@ Se inicia sesión en AWS con la cuenta awsacademy en el siguiente url: \href{htt
 	\includegraphics[scale=.3] {img/01}
 	\caption{Creación de instancia ec2}
 	\label{fig:1}	
-\end{figure} 
+\end{figure}
 
 Amazon EC2 le permite crear máquinas virtuales, o instancias, que se ejecutan en la nube de AWS. Comience rápidamente siguiendo los sencillos pasos que se indican a continuación.
 
@@ -41,7 +41,7 @@ Amazon EC2 le permite crear máquinas virtuales, o instancias, que se ejecutan e
 	\includegraphics[scale=.3] {img/02}
 	\caption{Par de claves: myKey.pem}
 	\label{fig:2}	
-\end{figure} 
+\end{figure}
 
 
 \clearpage
@@ -64,43 +64,43 @@ Un grupo de seguridad es un conjunto de reglas de firewall  que controlan el tr�
 	\includegraphics[scale=.35] {img/04}
 	\caption{grupo de seguridad: habilitación de conexión ssh}
 	\label{fig:4}	
-\end{figure} 
+\end{figure}
 
 \clearpage
 
 \subsection{Iniciar instancia}
-En esta sección se presenta el resumen de la instancia ec2 configurada. 
+En esta sección se presenta el resumen de la instancia ec2 configurada.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.35] {img/06}
 	\caption{Resumen de instancia}
 	\label{fig:6}	
-\end{figure} 
+\end{figure}
 
-La siguiente figura muestra la confirmación del lanzamiento de la instancia, indicando que se realizo de forma satisfactoria 
+La siguiente figura muestra la confirmación del lanzamiento de la instancia, indicando que se realizo de forma satisfactoria
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.35] {img/07}
 	\caption{Instancia ejecutándose de manera satisfactoria}
 	\label{fig:7}	
-\end{figure} 
+\end{figure}
 
 \clearpage
 
-Consola de aws donde se muestra la lista de instancias creadas y demás metadatos asociados a los mismo. 
+Consola de aws donde se muestra la lista de instancias creadas y demás metadatos asociados a los mismo.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.35] {img/08}
 	\caption{Lista de instancias en ejecución}
 	\label{fig:8}	
-\end{figure} 
+\end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.35] {img/09-asignacionDeIpElastica}
 	\caption{Instancia en ejecución}
 	\label{fig:9}	
-\end{figure} 
+\end{figure}
 
 La siguiente figura muestra la asignación satisfactoria de un ip elástico asociado a la instancia ec2 que se muestra en la figura anterior.
 
@@ -111,7 +111,7 @@ La siguiente figura muestra la asignación satisfactoria de un ip elástico asoc
 	\includegraphics[scale=.35] {img/09-asignacionDeIpElastica}
 	\caption{}
 	\label{fig:9}	
-\end{figure} 
+\end{figure}
 
 \clearpage
 
@@ -121,7 +121,7 @@ La siguiente figura muestra la asignación satisfactoria de un ip elástico asoc
 	\includegraphics[scale=.35] {img/10-asigacionCorrectaIpElastica}
 	\caption{}
 	\label{fig:10}	
-\end{figure} 
+\end{figure}
 
 \subsection{Conexión segura por SSH}
 Cambiando permisos de lectura y ejecución al archivo myKey.pem
@@ -132,44 +132,114 @@ Cambiando permisos de lectura y ejecución al archivo myKey.pem
 	\includegraphics[scale=.35] {img/11-chmod400}
 	\caption{Cambio de permisos}
 	\label{fig:11}	
-\end{figure} 
+\end{figure}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.35] {img/11-chmod400}
 	\caption{Cambio de permisos}
 	\label{fig:11}	
-\end{figure} 
+\end{figure}
 
 ssh -i mykey.pem ubuntu@44.192.119.93
- 
+
 fdsa
 fdsa
 fdas
 
+\clearpage
 
 
+\subsection{Actualización de paquetes}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/13-update}
+	\caption{Actualización de paquetes }
+	\label{fig:13}	
+\end{figure}
 
-Actualización de paquetes
+\subsection{Cambio del hostname}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/14-hostname}
+	\caption{Actualización del hostname}
+	\label{fig:14}	
+\end{figure}
 
+\clearpage
 
-Cambio de nombre al hostname
+\subsection{Instalación de Open JDK}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/15-installJdk}
+	\caption{Instalación de OpenJDK}
+	\label{fig:15}	
+\end{figure}
 
-Instalación de OpenJDK
+\subsection{Descarga e instalación de Hadoop}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/15-installJdk}
+	\caption{Instalación de OpenJDK}
+	\label{fig:15}	
+\end{figure}
 
+\clearpage
 
-Descarga e instalación de Hadoop
+\subsection{Descarga e instalación de Hadoop}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/16-webpageHadoop}
+	\caption{Lista de releases para descarga}
+	\label{fig:16}	
+\end{figure}
 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/17-hadoop-tar-gz}
+	\caption{Página de descarga del instalador seleccionado}
+	\label{fig:17}
+\end{figure}
 
-Descompresión e instalación del instalador
+\clearpage
 
-cambiando y moviendo el paquete
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/18-wgetHadoop}
+	\caption{Descarga del instalador}
+	\label{fig:18}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/19-tarXVFZ}
+	\caption{Instalación de hadoop}
+	\label{fig:19}
+\end{figure}
+
+\clearpage
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/20-tarXVFZ-2}
+	\caption{Instalación de hadoop (2da parte)}
+	\label{fig:20}
+\end{figure}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/21-rename}
+	\caption{Renombrado de la ruta de instalación}
+	\label{fig:21}
+\end{figure}
+
+\clearpage
 
 Configuración del environment
 
 Conexión segura por SSH
 
- 
+
 
 \subsection{Configuración de Hadoop}
 
