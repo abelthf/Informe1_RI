@@ -278,7 +278,7 @@ Agregamos java-home y hadoop$\_$conf$\_$dir
 	\label{fig:26}	
 \end{figure}
 \subsection{Conexión segura por SSH}
-Abrimos nuestro entorno de comandos y actualizamos 
+Abrimos nuestro entorno de comandos y actualizamos
  \clearpage
 \begin{figure}[h]
 	\centering
@@ -293,8 +293,8 @@ Reconeción de instancia y revision del archivo cargado
 	\caption{Reconectar conexión}
 	\label{fig:28}	
 \end{figure}
-Copiamos nuestro archivo copiado .pem 
- \clearpage 
+Copiamos nuestro archivo copiado .pem
+ \clearpage
 
 
 \subsection{Configuración de Hadoop}
@@ -306,14 +306,60 @@ Copiamos nuestro archivo copiado .pem
 
 \subsection{Inicio de Cluster de Hadoop}
 
--
--
--
 
 
+\subsection{Iniciar Yarn}
+El inicio del yarn se realiza a través del siguiente comando: 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/43-start-yarn-sh}
+	\caption{Iniciar yarn}
+	\label{fig:43}
+\end{figure}
 
+\subsection{Iniciar el history server}
+Para iniciar el history server, ejecutar el siguiente comando.  
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/44-mr-jobhistory.daemon-sh-start-historyserver}
+	\caption{Listar procesos Java en ejecución}
+	\label{fig:44}	
+\end{figure}
 
 \clearpage
+
+Para ver los procesos java en ejecución, ejecutar el comando $jps$. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/45-jps}
+	\caption{Listar procesos Java en ejecución}
+	\label{fig:45}	
+\end{figure}
+
+\subsection{Editando reglas de entrada}
+Se deben agregar reglas de entrada para permitir el tráfico
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/46-add-reglas-de-entrada}
+	\caption{Configuración de reglas de entrada}
+	\label{fig:46}	
+\end{figure}
+
+\clearpage
+
+\subsection{Vista de métricas de cluster}
+
+Recargamos la URL en el navegador publicdns:8088 y veremos la vista de métricas de Hadoop. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=.35] {img/47-publicdns-8088}
+	\caption{Vista de métricas de cluster de Hadoop}
+	\label{fig:47}	
+\end{figure}
+
+
+
 
 \section{Ejemplo de Aplicación WordCount con Mapreduce}
 \justify
@@ -321,10 +367,10 @@ En esta sección se presenta la aplicación de MapReduce como ejemplo, para tene
 WordCount es una aplicación sencilla que cuenta el número de apariciones de cada palabra en un conjunto de entrada determinado.
 
 Esto funciona con una instalación de Hadoop en una instancia de EC2 de aws, configurado de forma pseudodistribuida (configurado en un solo nodo) \scite{tuto_mapreduce}
- 
- 
+
+
  \subsection{Codigo fuente: WordCount}
- 
+
  Para el desarrollo de la aplicación se uso el lenguaje de programación Java, cuyo código se muestra a continuación.
 
 \begin{sourcecode}[]{java}{WordCount en Java.}
@@ -401,7 +447,7 @@ Se ha creado un archivo de nombre input, el mismo que contiene los nombres y ape
 	\includegraphics[scale=.35] {img/48-input}
 	\caption{archivo input}
 	\label{fig:48}	
-\end{figure} 
+\end{figure}
 
 
 
@@ -420,7 +466,7 @@ $ hdfs dfs -put input WordCount/input
 	\includegraphics[scale=.28] {img/49-hdfs-dfs-mkdir-p-wordcount-input}
 	\caption{Creación de directorio HDFS}
 	\label{fig:49}	
-\end{figure} 
+\end{figure}
 
 
 \textbf{Ejecución de Hadoop}
@@ -434,7 +480,7 @@ hadoop jar wordcount.jar wordcount WordCount/input WordCount/output
 	\includegraphics[scale=.28] {img/50-wordcount-jar}
 	\caption{Ejecución del paquete .jar parte 1}
 	\label{fig:50}	
-\end{figure} 
+\end{figure}
 
 Se visualiza el log de la ejecución de la aplicación empaquetada en .jar
 \begin{figure}[h]
@@ -442,12 +488,12 @@ Se visualiza el log de la ejecución de la aplicación empaquetada en .jar
 	\includegraphics[scale=.28] {img/51-hadoop-jar-wordcloud}
 	\caption{ejecución del paquete .jar parte2}
 	\label{fig:51}	
-\end{figure} 
+\end{figure}
 
 
 \textbf{Salida}
 
-Ejecutamos el file system de hadoop para que pueda obtener el output almacenado en el archivo part-r-00000. 
+Ejecutamos el file system de hadoop para que pueda obtener el output almacenado en el archivo part-r-00000.
 \begin{sourcecode}[]{bash}{Output}
 hdfs dfs -cat WordCount/output/part-r-00000
 \end{sourcecode}
@@ -457,7 +503,7 @@ hdfs dfs -cat WordCount/output/part-r-00000
 	\includegraphics[scale=.28] {img/52-output-hdfs-dfs}
 	\caption{Output}
 	\label{fig:52}	
-\end{figure} 
+\end{figure}
 
 Podemos apreciar que se realiza el conteo de nombres y apellidos que se repiten una determinada cantidad de veces.
 
@@ -471,7 +517,7 @@ HADOOP_HOME/sbin/stop-all.sh
 \clearpage
 \section{Conclusiones}
 
-Hadoop es un framework muy potente y realmente utilizable, sin embargo para un mejor performance, se requiere una mayor cantidad de nodo y datos para que hadoop pueda ser utilizado de manera eficiente. La aplicación WordCount es un sencillo programa que muestra las funciones que ofrece el MapReduce ya que ha demostrado como las aplicaciones pueden acceder a los parámetros de configuración de las implementaciones del Mapper, asimismo se ha demostrado la utilidad para manejar opciones genéricas de línea de comando de Hadoop. La aplicación ha demostrado que se puede usar para contar palabras, y como pueden configurar la información de estado específico de la aplicación que pasa del método map y reduce. 
+Hadoop es un framework muy potente y realmente utilizable, sin embargo para un mejor performance, se requiere una mayor cantidad de nodo y datos para que hadoop pueda ser utilizado de manera eficiente. La aplicación WordCount es un sencillo programa que muestra las funciones que ofrece el MapReduce ya que ha demostrado como las aplicaciones pueden acceder a los parámetros de configuración de las implementaciones del Mapper, asimismo se ha demostrado la utilidad para manejar opciones genéricas de línea de comando de Hadoop. La aplicación ha demostrado que se puede usar para contar palabras, y como pueden configurar la información de estado específico de la aplicación que pasa del método map y reduce.
 % ------------------------------------------------------------------------------
 % REFERENCIAS, revisar configuración \stylecitereferences
 % ------------------------------------------------------------------------------
