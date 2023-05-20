@@ -13,7 +13,7 @@
 
 Desde la declaración de la pandemia Covid19 a nivel mundial, muchos han sido los esfuerzos de realizar acciones para entender y controlar el desarrollo de esta pandemia, sin embargo desde el campo de computación han surgido la necesidad de establecer herramientas que permitan análisis visual que incorporen varios diseños visuales y análisis de las tendencias de propagación, con el objetivo de promover la comprensión de como se comportan los datos, ahora bien, a pesar que la pandemia a terminado, consideramos que sigue siendo una necesidad para el gobierno peruano y las instituciones llamadas a contribuir con herramientas que permitan el análisis y visualización de datos con otras enfermedades que azota al país como el caso del dengue, razón por la cual abordamos el presente trabajo.
 
- 
+
 \section{Descripción de la Base de Datos}
 
 
@@ -27,50 +27,51 @@ recolectada desde el 27 de noviembre de 2020 hasta el 16 de mayo de 2023; sin em
 \begin{enumerate}
 	\item \textbf{FECHA\_ACTUALIZACION}: La base de datos se alimenta diariamente, esta variable permite identificar la fecha de la ultima actualizacion. AAAA-MM-DD
 	\item \textbf{ID\_REGISTRO}: Número identificador del caso, TEXTO
-	\item \textbf{ORIGEN}: La vigilancia centinela se realiza a través del sistema de unidades de salud monitoras de enfermedades respiratorias (USMER). Las USMER incluyen unidades médicas del primer, segundo o tercer nivel de atención y también participan como USMER las unidades de tercer nivel que por sus características contribuyen a ampliar el panorama de información epidemiológica, entre ellas las que cuenten con especialidad de neumología, infectología o pediatría. (Categorías en Catalógo Anexo). CATÁLOGO: ORIGEN                                                              
-	\item \textbf{SECTOR}: Identifica el tipo de institución del Sistema Nacional de Salud que brindó la atención. CATÁLOGO: SECTOR                                                               
+	\item \textbf{ORIGEN}: La vigilancia centinela se realiza a través del sistema de unidades de salud monitoras de enfermedades respiratorias (USMER). Las USMER incluyen unidades médicas del primer, segundo o tercer nivel de atención y también participan como USMER las unidades de tercer nivel que por sus características contribuyen a ampliar el panorama de información epidemiológica, entre ellas las que cuenten con especialidad de neumología, infectología o pediatría. (Categorías en Catalógo Anexo). CATÁLOGO: ORIGEN
+	\item \textbf{SECTOR}: Identifica el tipo de institución del Sistema Nacional de Salud que brindó la atención. CATÁLOGO: SECTOR
 	\item \textbf{ENTIDAD\_UM}: Identifica la entidad donde se ubica la unidad medica que brindó la atención. CATALÓGO: ENTIDADES
-	\item \textbf{SEXO}: Identifica al sexo del paciente. CATÁLOGO: SEXO                              
+	\item \textbf{SEXO}: Identifica al sexo del paciente. CATÁLOGO: SEXO
 	\item \textbf{ENTIDAD\_NAC}: Identifica la entidad de nacimiento del paciente. CATALÓGO: ENTIDADES
 	\item \textbf{ENTIDAD\_RES}: Identifica la entidad de residencia del paciente. CATALÓGO: ENTIDADES
 	\item \textbf{MUNICIPIO\_RES}: Identifica el municipio de residencia del paciente. CATALÓGO: MUNICIPIOS
-	\item \textbf{TIPO\_PACIENTE}: Identifica el tipo de atención que recibió el paciente en la unidad. Se denomina como ambulatorio si regresó a su casa o se denomina como hospitalizado si fue ingresado a hospitalización. CATÁLOGO: TIPO\_PACIENTE 
+	\item \textbf{TIPO\_PACIENTE}: Identifica el tipo de atención que recibió el paciente en la unidad. Se denomina como ambulatorio si regresó a su casa o se denomina como hospitalizado si fue ingresado a hospitalización. CATÁLOGO: TIPO\_PACIENTE
 	\item \textbf{FECHA\_INGRESO}: Identifica la fecha de ingreso del paciente a la unidad de atención. AAAA-MM-DD
 	\item \textbf{FECHA\_SINTOMAS}: Idenitifica la fecha en que inició la sintomatología del paciente. AAAA-MM-DD
 	\item \textbf{FECHA\_DEF}: Identifica la fecha en que el paciente falleció. AAAA-MM-DD
-	\item \textbf{INTUBADO}: Identifica si el paciente requirió de intubación. CATÁLOGO: SI\_NO                                                                  
+	\item \textbf{INTUBADO}: Identifica si el paciente requirió de intubación. CATÁLOGO: SI\_NO
 	\item \textbf{NEUMONIA}: Identifica si al paciente se le diagnosticó con neumonía. CATÁLOGO: SI\_NO
 	\item \textbf{EDAD}: Identifica la edad del paciente. NÚMERICA EN AÑOS
 	\item \textbf{NACIONALIDAD}: Identifica si el paciente es mexicano o extranjero. CATÁLOGO: NACIONALIDAD
-	\item \textbf{EMBARAZO}: Identifica si la paciente está embarazada. CATÁLOGO: SI\_NO                                                                  
-	\item \textbf{HABLA\_LENGUA\_INDIG}: Identifica si el paciente habla lengua índigena. CATÁLOGO: SI\_NO                                                                  
-	\item \textbf{INDIGENA}: Identifica si el paciente se autoidentifica como una persona indígena. CATÁLOGO: SI\_NO                                                                  
+	\item \textbf{EMBARAZO}: Identifica si la paciente está embarazada. CATÁLOGO: SI\_NO
+	\item \textbf{HABLA\_LENGUA\_INDIG}: Identifica si el paciente habla lengua índigena. CATÁLOGO: SI\_NO
+	\item \textbf{INDIGENA}: Identifica si el paciente se autoidentifica como una persona indígena. CATÁLOGO: SI\_NO
 	\item \textbf{DIABETES}: Identifica si el paciente tiene un diagnóstico de diabetes. CATÁLOGO: SI\_NO
 	\item \textbf{EPOC}: Identifica si el paciente tiene un diagnóstico de EPOC. CATÁLOGO: SI\_NO
 	\item \textbf{ASMA}: Identifica si el paciente tiene un diagnóstico de asma. CATÁLOGO: SI\_NO
 	\item \textbf{INMUSUPR}: Identifica si el paciente presenta inmunosupresión. CATÁLOGO: SI\_NO
-	\item \textbf{HIPERTENSION}: Identifica si el paciente tiene un diagnóstico de hipertensión. CATÁLOGO: SI\_NO                                                                  
-	\item \textbf{OTRA\_COM}: Identifica si el paciente tiene diagnóstico de otras enfermedades. CATÁLOGO: SI\_NO                                                                  
-	\item \textbf{CARDIOVASCULAR}: Identifica si el paciente tiene un diagnóstico de enfermedades cardiovasculares. CATÁLOGO: SI\_NO                                                                  
-	\item \textbf{OBESIDAD}: Identifica si el paciente tiene diagnóstico de obesidad. CATÁLOGO: SI\_NO                                                                  
-	\item \textbf{RENAL\_CRONICA}: Identifica si el paciente tiene diagnóstico de insuficiencia renal crónica. CATÁLOGO: SI\_NO                                                                  
+	\item \textbf{HIPERTENSION}: Identifica si el paciente tiene un diagnóstico de hipertensión. CATÁLOGO: SI\_NO
+	\item \textbf{OTRA\_COM}: Identifica si el paciente tiene diagnóstico de otras enfermedades. CATÁLOGO: SI\_NO
+	\item \textbf{CARDIOVASCULAR}: Identifica si el paciente tiene un diagnóstico de enfermedades cardiovasculares. CATÁLOGO: SI\_NO
+	\item \textbf{OBESIDAD}: Identifica si el paciente tiene diagnóstico de obesidad. CATÁLOGO: SI\_NO
+	\item \textbf{RENAL\_CRONICA}: Identifica si el paciente tiene diagnóstico de insuficiencia renal crónica. CATÁLOGO: SI\_NO
 	\item \textbf{TABAQUISMO}: Identifica si el paciente tiene hábito de tabaquismo. CATÁLOGO: SI\_NO
-	\item \textbf{OTRO\_CASO}: Identifica si el paciente tuvo contacto con algún otro caso diagnósticado con SARS CoV-2. CATÁLOGO: SI\_NO                                                                   
+	\item \textbf{OTRO\_CASO}: Identifica si el paciente tuvo contacto con algún otro caso diagnósticado con SARS CoV-2. CATÁLOGO: SI\_NO
 	\item \textbf{TOMA\_MUESTRA\_LAB}: Identifica si al paciente se le tomó muestra de laboratorio. CATÁLOGO: SI\_NO
 	\item \textbf{RESULTADO\_LAB}: Identifica el resultado del análisis de la muestra reportado por el  laboratorio de la Red Nacional de Laboratorios de Vigilancia Epidemiológica (INDRE, LESP y LAVE) y laboratorios privados avalados por el InDRE cuyos resultados son registrados en SISVER. (Catálogo de resultados diagnósticos anexo). CATÁLOGO: RESULTADO\_LAB
 	\item \textbf{TOMA\_MUESTRA\_ANTIGENO}: Identifica si al paciente se le tomó muestra de antígeno para SARS-CoV-2. CATÁLOGO: SI\_NO
 	\item \textbf{RESULTADO\_ANTIGENO}: Identifica el resultado del análisis de la muestra de antígeno tomada al paciente. CATÁLOGO: RESULTADO\_ANTIGENO
 	\item \textbf{CLASIFICACION\_FINAL}: Identifica si el paciente es un caso de COVID\-19 según el catálogo ``CLASIFICACION\_FINAL''. CATÁLOGO: CLASIFICACION\_FINAL
-	\item \textbf{MIGRANTE}: Identifica si el paciente es una persona migrante. CATÁLOGO: SI\_NO                                                                  
+	\item \textbf{MIGRANTE}: Identifica si el paciente es una persona migrante. CATÁLOGO: SI\_NO
 	\item \textbf{PAIS\_NACIONALIDAD}: Identifica la nacionalidad del paciente. TEXTO, 99\=SE IGNORA
 	\item \textbf{PAIS\_ORIGEN}: Identifica el país del que partió el paciente rumbo a México. TEXTO, 97\=NO APLICA
-	\item \textbf{UCI}: Identifica si el paciente requirió ingresar a una Unidad de Cuidados Intensivos. CATÁLOGO: SI\_NO                                                                  
+	\item \textbf{UCI}: Identifica si el paciente requirió ingresar a una Unidad de Cuidados Intensivos. CATÁLOGO: SI\_NO
 \end{enumerate}
 
 \clearpage
 
 \subsection{Distribución de las Variables}
-\subsubsection{Tipos de Datos de las columnas del dataset}
+\subsubsection{Tipos de Datos de las columnas del \emph{dataset}}
+En la \ref{tabla:datatype} se puede apreciar los tipos de dato para cada columna del \emph{dataset}. Se puede apreciar que las fechas se detectan como \emph{object}, por lo cual será necesario hacer una transformación de dichos datos.
 
 \begin{table}[h]
 \resizebox{7.5cm}{!} {
@@ -120,8 +121,8 @@ recolectada desde el 27 de noviembre de 2020 hasta el 16 de mayo de 2023; sin em
 40 & UCI                     & int64      \\ \hline
 \end{tabular}
 }
-\caption{Tipos de datos.}
-\label{tabla:autores}
+\caption{Tipos de datos del \emph{dataset}.}
+\label{tabla:datatype}
 \end{table}
 
 \clearpage
