@@ -71,7 +71,7 @@ recolectada desde el 27 de noviembre de 2020 hasta el 16 de mayo de 2023; sin em
 
 \subsection{Distribución de las Variables}
 \subsubsection{Tipos de Datos de las columnas del \emph{dataset}}
-En la \ref{tabla:datatype} se puede apreciar los tipos de dato para cada columna del \emph{dataset}. Se puede apreciar que las fechas se detectan como \emph{object}, por lo cual será necesario hacer una transformación de dichos datos.
+En la tabla \ref{tabla:datatype} se puede apreciar los tipos de dato para cada columna del \emph{dataset}. Se puede apreciar que las fechas se detectan como \emph{object}, por lo cual será necesario hacer una transformación de dichos datos.
 
 \begin{table}[h]
 \resizebox{7.5cm}{!} {
@@ -127,6 +127,9 @@ En la \ref{tabla:datatype} se puede apreciar los tipos de dato para cada columna
 
 \clearpage
 \subsubsection{Valores no Nulos y Valores Nulos}
+Si bien es cierto los datos mostrados en la tabla \ref{tabla:isnull} indican que la tabla no tiene valores nulos, al hacer una revisión del contenido
+se encontró que muchos tienen valores 97, 98 y 99, que corresponde a "No aplica", "Se ignora", o "No especificado", respectivamente. 
+
 \begin{table}[h]
 \resizebox{10cm}{!} {
 \begin{tabular}{|l|l|c|c|}
@@ -174,8 +177,8 @@ En la \ref{tabla:datatype} se puede apreciar los tipos de dato para cada columna
 40 & UCI                     & 0 & 7294030 \\ \hline
 \end{tabular}
 }
-\caption{Valores nulos y no nulos encontrados en el dataset.}
-\label{tabla:autores}
+\caption{Valores nulos y no nulos encontrados en el \emph{dataset}.}
+\label{tabla:isnull}
 \end{table}
 
 \clearpage
